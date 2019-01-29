@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AssemblyScript-demo</title>
+</head>
+
+<body>
+  <script>
+    fetch('temp/assembly/f.wasm') // 从网络加载 f.wasm 文件
+      .then(res => res.arrayBuffer()) // 转成 ArrayBuffer
+      .then(WebAssembly.instantiate) // 编译为当前 CPU 架构的机器码 + 实例化
+      .then(mod => {
+        // 调用模块实例上的 f 函数计算
+        console.log(mod.instance.exports.f(40));
+      });
+  </script>
+</body>
+
+</html>
