@@ -101,3 +101,5 @@ tsconfig.json
   ]
 }
 ```
+
+参考文章：[WebAssembly 现状与实战](https://www.ibm.com/developerworks/cn/web/wa-lo-webassembly-status-and-reality/index.html)
